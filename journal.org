@@ -1,0 +1,15 @@
+#+TITLE: stormrider's journal
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+I've kept a plaintext journal since mid-1989.  It's evolved, from [[https://en.wikipedia.org/wiki/Vi][vi]] to [[https://www.gnu.org/software/emacs/][emacs]] to [[https://orgmode.org/worg/org-blog-wiki.html][org-mode]], but looked bascially the same.
+
+There are a lot of prior years' journals on a thumb drive, /someplace/.  Nevermind those for now, I'll just start posting from here.  No guarantee they'll be interesting, except maybe in an offhanded, slice-of-life, peeping-at-webcams kinda way.  YMMV, y'all.
+
+|          |          |          |          |          |          | [[file:20200723.org][20200723]] |
+| [[file:20200722.org][20200722]] | [[file:20200721.org][20200721]] | [[file:20200720.org][20200720]] | [[file:20200719.org][20200719]] | [[file:20200718.org][20200718]] | [[file:20200717.org][20200717]] | [[file:20200716.org][20200716]] |
+|          |          |          |          |          |          |          |

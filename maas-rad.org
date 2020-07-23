@@ -1,0 +1,17 @@
+#+TITLE: MAAS RAD project
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+EMAIL: bill.wear@canonical.com
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+This is an experiment in Reader Adaptive Documentation (or Reader Adaptive Design, as a larger category).  The idea is simple in principle: use tags in a documentation set to produce different versions of the documentation based on user preferences.  Those preferences might include version, preferred interface, or the industry in which the user is employed.  
+
+How those different versions are produced is still experimental, that is, whether they are versions that can change on the fly with user choices, or whether you just produce different complete versions (from the same tagged master source text) and the user chooses which version they want.  Since I'm still waiting on team decisions, I wanted to test my workflow and tools with the "different complete versions" idea, which is easier to do in this environment. 
+
+Please review and [[mailto:bill.wear@canonical.com][give me feedback]].
+
+** [[file:maas-rad/maas-documentation-25.html][plain (undifferentiated) doc set]]
+

@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif; margin-left:10px; margin-right:10px;}
+      /* code that is here, until the first @media block, will apply to any screen size */
+      img {
+      display:block;
+      width: 350px ;
+      align: center;
+      margin-left: auto;
+      margin-right:auto;
+      width:95%;
+      }
+      @media screen and (max-width: 320px) {
+      /* comes into effect for screens less than or equal to 320 pixels */
+      img {
+      width: 300px ;
+      }
+      }
+      @media screen and (max-width: 350px) {
+      /* comes into effect for screens between 321 and 480 pixels (inclusive) */
+      img {
+      width: 350px ;
+      }
+      }
+      @media screen and (min-width: 481px) {
+      /* comes into effect for screens larger than or equal to 481 pixels */
+      img {
+      width: 480px ;
+      }
+      }
+      @media screen and (min-width: 800px) {
+      /* comes into effect for screens larger than or equal to 481 pixels */
+      img {
+      width: 750px ;
+      }
+      }
+    </style>
+    <title>
+      stormrider's blog
+    </title>
+  </head>
+  <body class="w3-light-grey">
+    <h2>
+      exploring maas 2.8
+      <br/>
+      <small>
+	<em>newest version of a product i work on</em><br/>
+      </small>
+    </h2>
+    <hr>
+    <a href="index.html">blog index</a><br/>
+    <hr>
+    <p>
+      Happy to report that <a href="https://discourse.maas.io/t/maas-2-8-released/1716">MAAS 2.8 dropped today</a>. It's a step up for <a href="https://maas.io">Metal-as-a-Service (MAAS)</a>, since it allows MAAS to manage VM hosts created using <a href="https://linuxcontainers.org/lxd/introduction/">LXD</a>. I like it because I prefer LXD to other container systems, but that's actually a personal choice.  Telling the truth is kind of a big deal at Canonical, which is part of the reason I work here.
+    </p>
+    <p>
+      I've been working on MAAS since sometime in September last year, when I started getting interested in it.  Currently, I have a "kitchen-table datacenter" set up at home, which includes four laptops and a switch.  Here's a pic of part of my setup:
+    </p>
+    <center>
+      <img src="images/maas-ktdc.jpg">
+    </center>
+    <p>
+      The front laptop is <code>wintermute</code>, my MAAS host, while the one behind is <code>neuromancer</code>, with a couple of the VMs loaded there running.  They're both 8GB RAM, 4 cores, so they can realiably run about 3-4 VMs each before they drown.  You can tell from the networking cables that, given my lack of space on this table, there are two other laptops to the right (<code>stormrider-yoga</code>) and left (<code>WA5149</code>, my SWL callsign -- the laptop that runs my shortwave listening station).  Yes, it's a mess of cables, but that's what you get when you're always shifting hardware around.
+    </p>
+    <h3>
+      why i like this release
+    </h3>
+    <p>
+      For me personally, the LXD-based VMs are nice because there's a much better API than the <a href="https://ubuntu.com/server/docs/virtualization-libvirt">libvirt-based</a> KVMs we've been using.  We're still using KVMs, too, and for most people the choice will be moot (for right now, anyway). But I prefer the look and feel of LXD for most things, so I'm loading this update.
+    </p>
+    <p>
+      Really, I should say "installing;" I don't ever get rid of old versions, so my only upgrades are done so that I can write about the process (I'm the doc guy, if you couldn't guess).  It's a pretty <a href="https://maas.io/docs/install-from-a-snap">straightforward installation</a> for an infrastructure product like this one.  For the last two releases, it's been installable by snap or debian package, and I prefer the snap.
+    </p>
+    <h3>loading up MAAS</h3>
+    <p>
+      My first mission is to find or create a new LXD container to run it in:
+      <pre>
+stormrider@wintermute:~$ lxc list
+      </pre>
+      <img src="images/lxc-list.jpg">
+      <p>
+	If you don't have lxc, you can <a href="https://linuxcontainers.org/lxc/getting-started/">find it here</a>. But once you have it, it's just a matter of creating a new container, specifying the OS in the process:
+      </p>
+      <pre>
+stormrider@wintermute:~$ lxc launch ubuntu:18.04 maas-2-8-testcase
+Creating maas-2-8-testcase
+Starting maas-2-8-testcase
+      </pre>
+      <p>
+	Then you'll find your new, running container ready to use:
+      </p>
+      <pre>
+stormrider@wintermute:~$ lxc list
+      </pre>
+      <img src="images/testcase-running.jpg">
+      <p>
+	I need to enter the container to do the install, like this:
+      </p>
+      <pre>
+stormrider@wintermute:~$ lxc exec maas-2-8-testcase bash
+root@maas-2-8-testcase:~# 
+      </pre>
+      Once I'm in, I can start the <a href="https://maas.io/docs/install-from-a-snap">install</a>:
+    </p>
+    <img src="images/maas-snap-install.jpg">
+    <p>
+      And once it's done, I can check my work like this:
+    </p>
+    <img src="images/snap-list.jpg">
+    <h3>
+      configuring for production
+    </h3>
+    <p>
+      This version of MAAS offers two configurations: one has a companion snap with a small database, for testing purposes; the other uses the PostgreSQL on localhost, so there's no scaling problems.  Since I have about 106 machines on four different computers scattered around the room, I'm going for production.  I won't repost every step of the procedure, since I've <a href="https://maas.io/docs/install-from-a-snap#heading--init-prod">already documented it</a>.
+    </p>
+    <p>
+      The one "gotcha" here (sort of) is when you have to enter:
+      <pre>
+sudo maas init region+rack \
+--database-uri \
+"postgres://$MAAS_DBUSER:$MAAS_DBPASS@$HOSTNAME/$MAAS_DBNAME"
+      </pre>
+      because the $HOSTNAME really just needs to be "localhost" if you're installing everything on the same machine, like I am.  That part really isn't obvious.  Somebody ought to fix that.  Oh, wait, that's my job, sorry.
+    </p>
+    <p>
+      This step gives me a MAAS URL of:
+      <pre>
+http://10.132.172.15:5240/MAAS
+      </pre>
+      which is the veth0 in my container.  I also sneaked in a bridge there (192.168.122.2/24) so I can communicate with VM hosts.  You'll forgive my sneaky workmanship, I'm sure.
+    </p>
+    <p>
+      Then I have to create a MAAS user, using <code>sudo maas createadmin</code>.  Actually, in the LXD container, I'm running as root, so the <code>sudo</code> is superfluous, but it's just good practice for me to keep it there all the time.  I'll call my MAAS user <code>admin</code>, with password <code>admin</code>, since that's what I put in the database call.  While I'm at it, I'm going to rename my LXD container to "maas-2-8" after wiping out the old one, because the "testcase" just makes it too long.
+    </p>
+    <p>
+      Finally, I'll run through the <a href="https://maas.io/docs/configuration-journey">configuration journey</a>, but again, not going to re-post what I've already documented elsewhere.  And I'll <a href="https://maas.io/docs/add-nodes#heading--add-a-node-manually">manually add a machine</a> for good measure.
+    </p>
+    <h3>
+      firing it up
+    </h3>
+    <p>
+      Okay, now I have a fresh MAAS 2.8 install on my laptop.  I'm running Ubuntu 20.04 on this laptop, but you can run MAAS on lots of different configurations.  Let me demonstrate a couple of simple steps, just to show that it works.  First, I'm going to <a href="https://maas.io/docs/commission-nodes">commission</a> my new machine, a process shown in the next few panels:
+    </p>
+    <p>
+      <img src="images/commissioning.jpg">
+      <center>
+	<em>
+	  Choosing a machine, and choosing to commission it
+	</em>
+      </center>
+    </p>
+    <hr>
+    <p>
+      <img src="images/commission-trigger.jpg">
+      <center>
+	<em>
+	  Pulling the trigger on commissioning
+	</em>
+      </center>
+    </p>
+    <hr>
+    <p>
+      <img src="images/maas-comm.jpg">
+      <center>
+	<em>
+	  Commissioning in progress in the MAAS UI
+	</em>
+      </center>
+    </p>
+    <hr>
+    <p>
+    <img src="images/machine-comm.jpg">
+      <center>
+	<em>
+	  Commissioning in progress on the VM
+	</em>
+      </center>
+    </p>
+    <hr>
+    <p>
+      I can also <a href="https://maas.io/docs/deploy-nodes">deploy</a> the machine, once it's been commissioned (and aquired) -- which will lead me to have my own little running Ubuntu 18.04 console in a VM, like this:
+    </p>
+    <img src="images/running-vm.jpg">
+    <p>
+      It's not a giant datacenter yet, but this post is long enough.  Let me see what I can cook up for the next post.
+    </p>
+  </body>
+</html>

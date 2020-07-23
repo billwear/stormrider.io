@@ -1,0 +1,39 @@
+#+TITLE: 1594906242
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Thu, Jul 16, 2020 / 1594906242 / Boomtime, Confusion 51, 3186 YOLD
+
+** fortune -s
+Tuesday is the Wednesday of the rest of your life.
+
+** daily journal
+*** *<2020-07-16 Thu 08:37>*
+shortcutting my routine this morning; normally, i'd have a laundry list for the day (shower, shave, morning housework, etc), but i'm skipping most of that: partly because i laid in bed (because wanted to), and partly because i have so many projects in mind i can hardly get to them.  i mean, i want to clone the MAAS code to this site and start trying to document it, as a way of learning it better; i want to clone the MAAS doc to this site, so i can write a more informal version of it, in case anybody's interested; i want to port the BSD calendar program to Python; i want to start practicing the examples in APUE again; and i have a couple of books in mind to write.  so nevermind the extensive sweeping (the floor is clean enough), skip the shower (haven't missed a day in a long time), and get to work -- that's the order of the day!
+*** *<2020-07-16 Thu 09:56>*
+productive morning at work so far.  looks like my website A records weren't filled in, so i fixed that and we're off to the races.  that's good, because i want to use my website to test the reader adaptive documentation project i'm working on at work.  it's easier testing it on a site where i can control the environment without causing the guys to create some fancy new things to test my ideas.
+*** *<2020-07-16 Thu 10:16>*
+having trouble getting ~maas-rack register~ to work on 2.8.1 snaps; we're investigating it.  worked just fine on 2.7, which is my last "kitchen-table datacenter" using MAAS; making a mental note to follow up with the engineers as needed to figure this out.   meanwhile, i'm going to set up what's needed to publish several different versions of MAAS doc to the [[file:doc.org][docs]] section on here, to test my RAD idea.
+*** *<2020-07-16 Thu 11:02>*
+listening to an interesting show and tell from one of our engineers, on how he's working to improve our tests, which are using jenkins to run.  will share the video if it becomes available.
+*** *<2020-07-16 Thu 11:48>* 
+commissioning a machine on the MAAS 2.8.1 i installed this morning on neuromancer, one of my primary laptops (the other being wintermute).  just making sure that everything about my install is good except the problem trying to run maas-rack register in the snap:
+
+
+[[file:images/maas-2-8-1.jpg][picture: MAAS 2.8.1 commissioning]]
+
+*** *<2020-07-16 Thu 12:01>*
+lunchtime is fast approaching, and so are some more clouds (maybe rain?  one can hope, anyway, although my wife doesn't need that for her grocery shopping this afternoon).  the cat is inside, so she's kindof restless, but she's not sure about the weather, so it's an iffy thing where she taps on my leg three or four times an hour. i'm fat, so i might skip lunch today and just take a recliner nap; i'm sure the cat would enjoy that.
+
+*** *<2020-07-16 Thu 16:04>*
+in the process of putting the baseline RAD docset together, discovered that i'd need something to convert the discourse markdown to functional html; converting from markdown to html was simple -- about 8 lines of python -- but the more complex problem i have to solve is converting the links (which refer to discourse documents in various ways) and capturing the images (which might be the most difficult part).  for right now, i'll settle for adjusting the links.
+
+most of the links are of the form ~/t/doc-title/topic-number#anchor~.  what i mostly want to do is convert the ~/t/doc-title/topic-number~ to ~doc-title-topic-number.html~, which is how the converted files will show up.  that will handle 90% of it, and then i can decide how to fix the rest.
+
+*** *<2020-07-16 Thu 16:36>*
+almost got it; i have to use the original sets for my work, because the reassigned RAD group doesn't have the correct numbering, so i've got to bring over the base set to work with; that's fine and easy.

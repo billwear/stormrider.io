@@ -1,0 +1,29 @@
+#+TITLE: stormrider's cabin
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+This is my little corner of the global village.  I'm building it
+simply to capture some of the things I'm doing -- usually things I
+love to do, and things I find myself doing a lot.
+
+It isn't shared with any particular expectations: I'm
+not doing it to post affiliate links, or get ad revenue, or sell you
+on my latest book; it's not a political or religious platform of any
+kind.  And I really don't keep (or care much about) the
+analytics. 
+
+It's just a little insight into a techie's daily life.
+
+I will try to post *interesting* things more often than not, although
+there is a [[file:journal.org][daily journal]] section, if you like to see what goes on in a
+normal, everyday life.  I'm not big on webcams (eat too much
+bandwidth), but I can certainly tell the story in words.
+
+Usually, though, it's about things I'm coding, or writing about, or
+technical products I'm trying out.  Currently, I'm a *developer
+advocate* for [[https://maas.io][MAAS]] at [[https://www.canonical.com][Canonical]], a place I've wanted to work since the
+first time I installed [[https://www.ubuntu.com][Ubuntu]].
+

@@ -1,0 +1,24 @@
+#+TITLE: 1595084192
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Sat, Jul 18, 2020 / 1595084192 / 
+Prickle-Prickle, Confusion 53, 3186 YOLD
+
+** fortune -s
+You will outgrow your usefulness.  /heh. so will we all./
+
+** daily journal
+*** *<2020-07-18 Sat 09:59>*
+well, that was a long sleep, sort of. didn't go to bed until 11:30-ish, which is late for me, but (miracle of miracles) i slept all the way until 5am; nice; then i laid awake for a few minutes, fiddled with my phone, and then managed to go back to sleep until about 8:45.  baby, my cat, helped by snuggling, and we snoozed for hours.  no complaints; still, i got myself up and tried very hard to get started, even though my body wants to laze around.  too many things in my head that i want to do this weekend, and barely enough time to do them, in my estimation, meaning some of them won't get finished by sunday night.  that's life.
+
+*** *<2020-07-18 Sat 11:02>*
+took an hour and got cleaned up, got my head on straight, took my meds %-) and generally got started on my day; it's not bad to start late on a saturday, right? anyway, had to get awake and functioning.  now let's see what i can do that's useful and enjoyable, aside from finding lunch.
+
+*** *<2020-07-18 Sat 11:32>*
+cleaned up my directories, back to a very BSD-like hierarchy for my home directory, because i basically know where to find stuff.  note to self, i've got to find a better ergo situation with desk and chair: the main pebcak is my neck, so i need better monitor position.

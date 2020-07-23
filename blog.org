@@ -1,0 +1,12 @@
+#+TITLE: stormrider's blog
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+OPTIONS: \n:t
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+** *[[file:ninety-pct.org][life is 90% of my use cases for org mode]]*
+/the Tech Model Railroad Club, Margaret, the groceries, and a Volkswagen/
+
+-----

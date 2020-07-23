@@ -1,0 +1,9 @@
+#+TITLE: MAAS code doc project
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org/][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+Comments lie, I know, so I'm not necessarily doing this to make a pull request.  But I have found that my understanding is much better when I document the code.  No promises on how insightful this might be; after all, I'm relatively new to Python and MAAS.  YMMV.

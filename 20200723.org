@@ -1,0 +1,17 @@
+#+TITLE: 1595515207
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Thu, Jul 23, 2020 / 1595515207 / Prickle-Prickle, Confusion 58, 3186 YOLD
+
+** fortune -s
+Today is what happened to yesterday. /barber-shop mirrors as a mantra. yeah./
+
+** daily journal
+*** *<2020-07-23 Thu 09:41>*
+Late journaling today, but not late getting started.  New schedule is right on time, pushing more trivial things until later in the day so I can sleep in and take advantage of my daily groove (afternoon and evening).  Just a quick pop-in to start the day's notes, i'm getting ready for a show-and-tell session on my ~xpub~ tool.

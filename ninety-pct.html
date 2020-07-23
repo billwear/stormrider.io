@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-23 Thu 15:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>...ninety percent...</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="stormrider" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">...ninety percent...</h1>
+<div class="org-center">
+<p>
+<a href="blog.html">blog</a>  <code>~</code>   <a href="journal.html">journal</a>   <code>~</code>   <a href="doc.html">doc</a>   <code>~</code> <a href="code.html">code</a> <code>~</code> <a href="index.html">home</a><br />
+</p>
+</div>
+<div id="outline-container-org015fb0f" class="outline-3">
+<h3 id="org015fb0f"><b>life is 90% of my use cases for org mode</b></h3>
+<div class="outline-text-3" id="text-org015fb0f">
+<p>
+<i>a long time ago, in an irc far, far away</i><br />
+<i><b><b>ack</b></b>: tables are 90% of my use cases for org mode</i><br />
+<i><b><b>stormrider</b></b>: life is 90% of my uses cases for org mode</i><br />
+<i><b><b>sparkiegeek</b></b>: sounds Quoteworthy....</i><br />
+</p>
+
+<p>
+There's a story that's gone around MIT forever.  In case you didn't know, a lot of the computer revolution began with the Tech Model Railroad Club in the late 50's. Yeah, there were people that liked to build scenery, and others that got into fancier trains and mechanical accessories.  But the folks I'm mentioning worked on the switchgear.<br />
+</p>
+
+<p>
+I think they were a committee dedicated to programming greasy little analog computers that animated the whole assembly.  When the "hulking giant" came to town -- a giant mainframe that took paper-tape programs -- they began to take the overnight slots in the computer room, building programs, trying to cut instructions down to the very minimum.  It became an obsession.<br />
+</p>
+
+<p>
+In fact, it was <i>such</i> an obsession that one of the guys there (I think his name was Bob?) started trying to adapt his thinking and his <i>casual language</i> to the sequential logic of computer programs.  This didn't serve him well, as the story goes: For three Saturdays on end, his wife Margaret would go to the local grocery to get provisions.  When she got home, she'd always ask, "You want to help me bring in the groceries?" Bob would simply reply, "No."  And then he'd go on working on whatever he was fooling with at the moment.<br />
+</p>
+
+<p>
+On the fourth Saturday (again, according to legend), Margaret came home, after packing a considerable load of supplies in their tiny Volkswagen, and asked again.  Again Bob declined, but this time, Margaret blew up.<br />
+</p>
+
+<p>
+"What's wrong with you?  Why won't you help me with the groceries?"<br />
+</p>
+
+<p>
+"You asked me if I wanted to help you bring in the groceries.  You didn't ask me if I would."<br />
+</p>
+
+<p>
+You can see where this probably went, although legends sort of get hazy after the punch line. But it illustrates a point about the way frequent computer users have their logic and language very much influenced by the machines they address.  It's the old proverb all over again: you become like your friends, even if they're made of silicon and plastic.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7c98c73" class="outline-2">
+<h2 id="org7c98c73">i only <b>toured</b> MIT</h2>
+<div class="outline-text-2" id="text-org7c98c73">
+<p>
+I only toured MIT when I was in the seventh grade, part of a prize for winning the state science fair that year.  Since our family was very middle-middle-class, my dad asked me not to consider going to any school that was too far from home.  As incentive, he pulled some strings with his faculty colleagues to get me into computer classes at the local community college (when I was 14) and arranged for me to take college classes at the local university as part of my regular high-school schedule.<br />
+</p>
+
+<p>
+So it was that I logged into UNIX for the first time at Calhoun Community College, in Decatur, Alabama, during the summer of 1974.  Having been an avid reader since the age of 6, text and text-processing were very much on my mind.  When I encountered a system where plain text is the raw material flowing through the pipes, I was hooked.<br />
+</p>
+
+<p>
+This led me to undertake an informal study of UNIX, all the way back to the Tech Model Railroad Club and all the hackers that came from there.  And the story about Margaret and the groceries and the Volkswagen gave me a bigger clue: Computers and humans both depend on language, but unlike computers, human speech conveys an exact meaning even using apparently <i>imprecise</i> language.  Could the informal programming rules that I learned from UNIX, be adapted to life?<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgecdffda" class="outline-2">
+<h2 id="orgecdffda">UNIX rules for <b>life</b></h2>
+<div class="outline-text-2" id="text-orgecdffda">
+<p>
+After about 30 years as a tech writer and frequent programmer, I finally settled on a set that works for me.  Little did I know that these very principles would lead me to org-mode, which would later lead me to find my people:<br />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org308f18e"></a>Keep it simple. It's cheaper and easier to carry around.<br /></li>
+<li><a id="org700fc66"></a>Do one thing well (at a time), because multitasking is a lie.<br /></li>
+<li><a id="orgcb7e809"></a>Network: You were born to connect.<br /></li>
+<li><a id="org4a3595a"></a>Say what you mean; nothing is truer than the truth.<br /></li>
+<li><a id="orgb0fe744"></a>Hack, because trial and error is the only way we learn anything<br /></li>
+<li><a id="org3e253d7"></a>Be who you are: Even a bent wire can carry a great light.<br /></li>
+<li><a id="orgde75df8"></a>Use leverage -- a bigger hammer isn't always the answer.<br /></li>
+<li><a id="org487c18a"></a>Use what you have. Never for dig diamonds with a brick of gold.<br /></li>
+<li><a id="orgf769afe"></a>Have faith; all things are possible, except maybe skiing through a revolving door.<br /></li>
+<li><a id="orgb3fb623"></a>Think ahead, but don't worship your plans. Remember, today is the first day of the rest of your learning experience.<br /></li>
+</ul>
+
+<div id="outline-container-org09e7c37" class="outline-4">
+<h4 id="org09e7c37">a <b>vi</b> convert</h4>
+<div class="outline-text-4" id="text-org09e7c37">
+<p>
+I didn't start with org-mode, actually, but with plain journal files labeled YYYYMMDD, in a special directory in <code>/var/log</code>.  I still have those going back to sometime in the 90's.  The format was simple, but using the files soon became complex:<br />
+</p>
+
+<pre class="example">
+
+*** personal journal of stormrider
+tue, aug 04, 1992 / 712904400
+sweetmorn, confusion 70, 3158 YOLD
+
+*** fortune -s
+Cold hands, no gloves.
+
+*** appts
+09:00  staff meeting, conf rm
+18:30  dinner with amit &amp; bonnie
+
+*** to do
+finish revisions on x-windows book
+do syllabus for advanced C class
+read some in Stevens &amp; Rago
+shower
+shave
+dress
+take out the trash otw to work
+.
+.
+.
+
+*** daily journal
+06:43 - man, didn't sleep well
+last night; i think i'm overdoing
+it on the coffee at work; maybe i
+should cut back some?
+.
+.
+.
+</pre>
+
+<p>
+The unwieldy part came with all the repeated tasks, and tasks that got carried over from one day to the next (or didn't get finished). I had to copy yesterday's file, change all the key info, sort out the todo list, erase yesterday's journal, and generally do far too much work to keep my journal up.<br />
+</p>
+
+<p>
+I did it, but intermittently, supplanting it with post-it notes, pads, planners galore, palm pilots, palmtop computers, etc.  It seemed like every day I was badly copying tasks from one day to the next. Meanwhile, my unwillingness to use Windows didn't give the the luxury of Outlook, when it came along.<br />
+</p>
+
+<p>
+I got turned onto emacs sometime in the mid-nineties, when I moved to Atlanta to work for HP.  A fellow writer there used it, and suggested it might help me write and code up examples more effectively.  He was right, and it stuck as my editing platform of choice. But I hadn't discovered org-mode yet. Either nobody I knew used it, or it hadn't been invented yet.  And to be honest, I kinda went back and forth between vi and emacs, depending on my "mood of the month."<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4177e53" class="outline-2">
+<h2 id="org4177e53">a modem <b>in</b> the woods</h2>
+<div class="outline-text-2" id="text-org4177e53">
+<p>
+Eventually, my HP job became a telecommuting-type arrangment, and I moved home to the farm, about an hour outside New Orleans, in the woods.  At that time, Internet was still modem-driven out here, so having command-line Linux with emacs on my laptop was a real lifesaver.<br />
+</p>
+
+<p>
+Sometime not long before Katrina hit, I stumbled across org-mode.  I'd already used outline mode for some period of time (can't remember how long), and org-mode seemed like a logical follow-on from there.<br />
+</p>
+
+<p>
+From there, org-mode just grew, and I grew with it.  All the features made it easy for me to both do what seemed natural for me, and do things in a way that felt like they supported my principles.  Gradually, my other methods of keeping track of things faded away, except for my alarm clock.<br />
+</p>
+
+<p>
+Even when smart-phones took off, I was always trying to find some way to send org files over to my phone and use them there.  I think I even wrote some lua code in an iPhone wiki app to emulate org-mode with my files, though it was not fully satisfactory.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2f101b1" class="outline-2">
+<h2 id="org2f101b1">an org-mode <b>resume</b></h2>
+<div class="outline-text-2" id="text-org2f101b1">
+<p>
+Fast-forward to last May.  I'd been wanting to get on with Canonical for a long time, but hadn't found the right position, one that really matched my skills.  Then one Saturday, while I was waiting for my wife to meet me for some community event we were hosting, I saw a position that virtually described me.  I started to write a resume, but then decided that I would just take the job description elements, one-by-one, put them in an org file, and send them to the hiring manager.<br />
+</p>
+
+<p>
+Long-story short, almost everyone on this team used emacs, and org-mode, and lots of other .el packages that I also used every day.  I got the job, and so far, I'm very happy and feel like I fit in very well.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org376c354" class="outline-2">
+<h2 id="org376c354">org-mode <b>and</b> my principles</h2>
+<div class="outline-text-2" id="text-org376c354">
+<p>
+Here's how I feel about using org-mode for everything: email, git, irc, web-browsing, organization, time-keeping, and so on.  And yes, I do use org-mode to connect with my email and the web, even though I use other packages (rmail, eww, magit, erc) to do the heavy lifing.  Let me walk it down, principle by principle:<br />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org8c1f8f5"></a>Keep it simple<br />
+<div class="outline-text-5" id="text-org8c1f8f5">
+<p>
+Granted, emacs isn't the simplest user interface, that is, until it becomes second nature.  After that, you'll find yourself accidentally erasing cells in your Google spreadsheet when you hit "C-x C-s" to try to save (good thing there's an undo). But the fact that you can use the same text for multiple functions: appointments, task states, task notes, clocking time, building an agenda, sending email, project planning, percentage completion, ....  The list is too long to quote, but just a simple statement, like "Get the discourse publishing tool working," can become the nucleus for a whole cycle's work and all the actions that go with it.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orga45435e"></a>Do one thing well at a time<br />
+<div class="outline-text-5" id="text-orga45435e">
+<p>
+The window-driven nature of emacs makes it easy to switch tasks when you have to (just open another buffer) and then switch back later, and more quickly link back to where you were; not to mention that, if you become adept at using the agenda, you can keep yourself on track and move other things around with ease, and without any fear that they'll get lost.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orgb4d8178"></a>Network<br />
+<div class="outline-text-5" id="text-orgb4d8178">
+<p>
+Since I'm set up to send email, IRC, Mattermost, etc., directly from my org-mode tasks, it's easy to track where I am.  But even if I used another app, it's still really easy to just cut and paste a note next to a task and then set a follow-up time to prod, all without breaking your train of thought.  You're literally still looking at the work you're doing while you're messaging about it, so there's that.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orgd97dcdb"></a>Say what you mean<br />
+<div class="outline-text-5" id="text-orgd97dcdb">
+<p>
+You have the entire outline in front of you for whatever you're working on, so presentations, show-and-tell sessions, and status reports are really simple to give, whether verbally or in writing.  It's easy to (a) tell the truth, because you can see it at a glance, and (b) not stumble around trying to remember, which often leads us to embellish, just to keep the conversation moving.<br />
+</p>
+</div>
+</li>
+
+<li><a id="org54d250f"></a>Hack...<br />
+<div class="outline-text-5" id="text-org54d250f">
+<p>
+If it doesn't do what you want, you've got customizable variables, a huge library of packages, strong macro capability, and push-come-to-shove, emacs lisp, though I rarely have to go there, TBH.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orgbaf6033"></a>Be who you are<br />
+<div class="outline-text-5" id="text-orgbaf6033">
+<p>
+Org-mode matches my thinking style. Not true for everyone, but I tend to outline or mindmap (which you can do with org-mode, with the right .el package).<br />
+</p>
+</div>
+</li>
+
+<li><a id="org906276d"></a>Use leverage<br />
+<div class="outline-text-5" id="text-org906276d">
+<p>
+Org-mode seriously leverages the power of plain text, in that you can either use the shortcuts to add an appointment, add tags, search tags -- or you can just do it by hand, because all of the special notation is plain text.  Leveraging human language in this way is helpful to me.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orga98ed66"></a>Use what you have<br />
+<div class="outline-text-5" id="text-orga98ed66">
+<p>
+Org-mode and emacs give me a stable platform that works everywhere, even on a printout.  I don't need license fees, special extensions, subscriptions, add-on tools, or constant updates to keep my life humming.<br />
+</p>
+</div>
+</li>
+
+<li><a id="orgd504e97"></a>Have faith<br />
+<div class="outline-text-5" id="text-orgd504e97">
+<p>
+Org-mode has justified my faith, as has emacs.  Lots of tools I've used break, crash, or get killed by absorption (I once liked Astrid, e.g., but it suddenly got sold and went away).  And no other tools do everything I want without switching apps. Org-mode and emacs are pretty much here to stay, especially since there is no license fee, and I can keep a self-contained version backed up at home, should it ever stop being distributed.<br />
+</p>
+</div>
+</li>
+
+<li><a id="org6d6e9e3"></a>Think ahead<br />
+<div class="outline-text-5" id="text-org6d6e9e3">
+<p>
+This is where org-mode, and especially the agenda, shine.  If I'm busy, I don't have to worry about keeping my outline clean.  I can stop in the middle of notes for another project, hit return, enter a to do for later (and tag it and schedule it to pop up later), and then move that to someplace more suitable later.  The agenda will clean it up and put it in perspective for me.  Or I can search for it, or pull up all open to-do items (even by tags), or....  There are just too many ways to throw things ahead without losing my train of thought.<br />
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org138f43a" class="outline-2">
+<h2 id="org138f43a">a <b>weird</b> kind of heaven</h2>
+<div class="outline-text-2" id="text-org138f43a">
+<p>
+Okay, those are my reasons, and why life is 90% of my use cases for org-mode, but what's the other 10%?  Well, it's only wishful thinking, but if we get to pick our environment in heaven, I would choose one of those large, paneled offices off of a raised floor mainframe room.  You know the ones: the stained carpet squares, the laminated pressboard desks, the sqeaky swivel chairs, and the half-working flourescents.  And a terminal on the desk that runs nothing but emacs and org-mode.  And a Volkswagen full of groceries every week.<br />
+</p>
+
+<p>
+Here's hoping. ;-)<br />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2020-07-23 Thu 15:03</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

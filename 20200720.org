@@ -1,0 +1,19 @@
+#+TITLE: 1595267803
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Mon, Jul 20, 2020 / 1595267803 / Sweetmorn, Confusion 55, 3186 YOLD
+
+** fortune -s
+Don't kiss an elephant on the lips today.  /np. not on my agenda anyway./
+
+** daily journal
+*** *<2020-07-20 Mon 12:58>*
+everything's shifting down for me in the day: getting up later, getting into my groove later, etc.  which works well, because (a) i'm more of a night person, (b) i seem to sleep better when i go to bed a little later, (c) my work morning is usually packed with meetings (lots of teammates in europe), and (d) i'm getting a lot of the more important things done and having lots of good, creative ideas that i didn't used to have.  i attribute a lot of this to finally getting treatment for anxiety, which has been a lifelong problem that i didn't actually know i had.  a good therapist is worth the money, don't ever feel like there's a stigma associated with that, especially for creative people.  and don't rule out mild medications for things like anxiety, either, they can be well worth their (usually very low) price.
+
+anyway, i now seem to be spontaneously adjusting my schedule to be more lopsided on the "after" side of "noon."  we'll see how it goes.

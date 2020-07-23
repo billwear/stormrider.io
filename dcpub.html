@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif; margin-left:10px; margin-right:10px;}
+    </style>
+    <title>
+      stormrider's blog
+    </title>
+  </head>
+  <body class="w3-light-grey">
+    <h2>
+      dcpub - discourse publishing tool
+    </h2>
+    <h3>
+      WYSINEUTWYG be damned
+    </h3>
+    <hr>
+    <a href="index.html">blog index</a><br/>
+    <hr>
+    <p>
+      I hate WYSINEUTWYG.
+    </p>
+    <p>
+      First of all, WYSIWYG is mostly a lie; it's really "What you see is NOT ENTIRELY UNRELATED TO what you get."  Face it; skeuomorphic text editing isn't really that efficient, because you have to break your stride to find the button, or find the modifier key, or double-check that you haven't screwed up the closure...you know the drill.
+    </p>
+    <p>
+      My whole career is really about one thing: parsing text.  My way of learning most new languages is to port the BSD calendar program to it, and I get lost in complicated conversions of text from one format to another.  That parsing extends to writing, which is really just parsing abstract ideas into readable text.  So you might say "writing and parsing text," to be more clear, but it's really all part of the same thing for me.
+    </p>
+    <p>
+      And I've always tried to escape from any need for a mouse -- or special modifiers -- when editing.  Sure, I might throw it in GoogleDocs or slam it into Word and make it look pretty for the editors, but the whole concept of trying to write something intelligent, while at the same time farting around with format, is just inefficient and damn annoying.
+    </p>
+    <p>
+      Lately, I've had much occasion to use the <a href="https://www.discourse.org/">discourse</a> forum.  If you've used it, you probably know the WYSINEUTWYG* editor is pretty decent -- just not ideal for someone who once said, "Life is 90% of my use cases for [emacs]."  Discourse also has a fairly robust API, so I'm doing what any good coder would do: I'm writing my own publishing interface, using that API.
+    </p>
+    <h3>
+      basic requirements
+    </h3>
+    <p>
+      My basic requirements for this tool are simple, but precise:
+      <ul>
+	<li>The tool must pull existing topics from discourse and deposit them in a local file, in perfect discourse markup (no process trash).</li>
+	<li>The tool must push local markdown files back to existing topics, replacing the topic text, producing perfect discourse files in the process.</li>
+	<li>The tool must create new discourse topics from local files, setting them in perfect discourse format.</li>
+      </ul>
+      There are also a couple of "nice-to-haves:"
+      <ul>
+	<li>It would be <em>nice</em> if the tool is able to pull topics and create a filename based on the topic "slug," which is the topic title, stripped of all punctuation, with words separated by dashes, maybe including the topic number on the end of the filename.</li>
+	<li>It would be <em>nice</em> if the tool could pull metadata from the discourse topic, like whether it's been deleted or when it was last edited, e.g, and store that separately.</li>
+	<li>It would be <em>nice</em> if the tool could pull a range of topics, like, say, all the topics in category "X" that aren't deleted.</li>
+	<li>It would be <em>nice</em> if the tool could make copies of a range of topics, like, say, all the undeleted topics in category "X," and create a duplicate set in category "Y" (e.g., for drafting updates to an entire docset).
+      </ul>
+    </p>
+    <h3>
+      starting point: push and pull existing topics by number
+    </h3>
+    <p>
+      I decided to do this in python, partly because it has some excellent libraries, and partly because it's a relatively new language for me, so it's good practice.  I'm quite sure there are better ways to do this, and I'll probably get lots of suggestions when I post this on HN, which is fine.  Just realize that I'm applying Djikstra's dictum ("don't optimise to start with") and trying to get something that works, and then improve it from there.
+    </p>
+    <p>
+      My "psuedocode" for a first version goes something like this:
+      <ul>
+	<li>Import the libraries, with some exception checking</li>
+	<li>Parse command line options (using OptionParser, it's CLI-worth)</li>
+	<li>Validate options & reject non-sequiturs with a usage message</li>
+	<li>Read credentials from a yaml config file</li>
+	<li>Read the topic from discourse to get the post number</li>
+	<li>Handle a GET (pull), if that was requested, using the post number</li>
+	<li>Handle a PUT (push), if that was requested, also using post number</li>
+	<li>Optionally output the intermediate JSON for topic and/or post</li>
+      </ul>
+      Let me clarify a couple of those things:
+      <ol>
+	<li>First, I read the topic to get the post number because there's either a bug in the discourse API or I can't get the incantation right to update a topic.  I've tried every combination, so I think it's a bug.</li>
+	<li>Second, the credentials are in an external YAML file so that they're not embedded in the code; this is pretty much standard practice, but not everybody does this, so I'm pointing it out.</li>
+	<li>Third, I'm adding a way to output the intermediate JSON for topic and/or post, because it's useful if I want to find some other piece of metadata that I want (like, say, when the post was last edited).</li>
+      </ol>
+      There's also one little "gotcha" in here I havent figured out, so I'm going to work around it: For some reason, article shorter than 9000 characters don't always want to repost.  They give a vague error.  I can solve that, eventually, but for now I'm just going to pad my RAW input out to 9000 characters -- using only space -- if it's short.  Remember that all of the API tools will compress repeated spaces down to one space.  When I tested this technique, it works perfectly and doesn't slow the process down noticeably.
+    </p>
+    <p>
+      So without further adieu, let me just post the code I've written so far, and point to the github so you can play with it.  I'll talk more about it in a next blog:
+      <pre style="background-color:#dadada">
+#!/usr/bin/python3
+# dpub is a set of discourse publishing tools, using the discourse API
+# try "dpub -h" for help and calling sequences
+#
+import subprocess, json, sys, getopt
+from optparse import OptionParser
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
+
+parser = OptionParser()
+parser.add_option("-t", "--topic", dest="topic",
+                  help="discourse topic to read or write (with -g or -p)")
+parser.add_option("-g", "--get", action="store_true", dest="get", default=False,
+                  help="read TOPIC into FILENAME; req -t & -f")
+parser.add_option("-p", "--put", action="store_true", dest="put", default=False,
+                  help="write TOPIC from FILENAME into discourse; req -t & -f")
+parser.add_option("-c", "--create", action="store_true", dest="create", default=False,
+                  help="create new topic and write FILENAME to it; req -f")
+parser.add_option("-f", "--file", dest="filename",
+                  help="file to read (-g) or write (-p, -c)", metavar="FILE")
+parser.add_option("-k", "--config", dest="config_file",
+                  help="config file w/URL, api-key, username (default \"dpub.yaml\")")
+parser.add_option("-j", "--json", dest="json_file",
+                  help="write post json to JSON_FILE when using -g, before converting")
+parser.add_option("-J", "--JSON", dest="topic_json_file",
+                  help="write TOPIC json to TOPIC_JSON_FILE when using -g")
+
+(options,args) = parser.parse_args()
+
+# get or put with no topic number
+if( (options.get or options.put) and not options.topic ):
+    parser.print_help()
+    sys.exit()
+
+# get or put or create with no filename
+if( (options.get or options.put or options.create) and not options.filename ):
+    parser.print_help()
+    sys.exit()
+
+# no options at all
+if( not options.get and not options.put and not options.create \
+    and not options.filename and not options.topic):
+    parser.print_help()
+    sys.exit()
+
+# read config file to get api-key, api-usr, and discourse url
+if(options.config_file):
+    config_file = options.config_file
+else:
+    config_file = "/etc/dc.yaml"
+cfile = open(config_file,"r")
+config_data = load(cfile, Loader=Loader)
+
+# read the topic, which is required for both get and put
+# note that discourse topic put doesn't work reliably at this time,
+# so dpub gets the topic to get the post number, then reads or writes the post
+if( options.get or options.put ):
+    print("reading the topic")
+    proc = subprocess.Popen([
+        'curl',
+        '-X',
+        'GET',
+        '-H',
+        'Api-Key: ' + config_data['api_key'],
+        '-H',
+        'Api-Username: ' + config_data['api_username'],
+        '-H',
+        'Content-Type: application/json',
+        config_data['base_url'] + '/t/{'+str(options.topic)+'}.json'],
+        stdout=subprocess.PIPE
+    )
+    output = proc.stdout.read()
+    topic_json = json.loads(output)
+    post_id = topic_json['post_stream']['posts'][0]['id']
+    # if user requested the intermediate topic json, write it to other spec'd filename
+    if( options.topic_json_file ):
+        f2 = open(options.topic_json_file, "w")
+        f2.write(str(topic_json))
+        f2.close()
+
+# get post, convert it to markdown, and write it to the specified filename
+if( options.get ):
+    # read the post using the api
+    proc2 = subprocess.Popen([
+        'curl',
+        '-X',
+        'GET',
+        '-H',
+        'Api-Key: ' + config_data['api_key'],
+        '-H',
+        'Api-Username: ' + config_data['api_username'],
+        '-H',
+        'Content-Type: application/json',
+        config_data['base_url'] + '/posts/{'+str(post_id)+'}.json'],
+        stdout=subprocess.PIPE
+    )
+    output2 = proc2.stdout.read()
+    post_json = json.loads(output2)
+    
+    # if user requested the intermediate post json, write it to other spec'd filename
+    if( options.json_file ):
+        f2 = open(options.json_file, "w")
+        f2.write(str(post_json))
+        f2.close()
+
+    # capture just the article text itself ('raw'), convert, & write to output file
+    raw = post_json['raw']
+    f = open(options.filename, "w")
+    f.write(str(raw))
+
+if( options.put ):
+    # load and convert the specified markdown file
+    f = open(options.filename, "r")
+    markdown = f.read()
+    # pad the markdown to 9000 chars to avoid discourse bug
+    outstr = markdown.ljust(9000)
+    data = {}
+    # place the markdown in the json "raw" location, covert, and write to json file
+    data["raw"] = outstr
+    f = open("foo.json", "w")
+    f.write(json.dumps(data))
+
+    # upload the json to discourse, replacing whatever was at post_id
+    url = config_data['base_url'] + '/posts/{'+str(post_id)+'}.json'
+    apikey = 'Api-Key: ' + config_data['api_key']
+    apiusername = 'Api-Username: ' + config_data['api_username']
+    response = subprocess.check_output([
+        'curl',
+        '-X',
+        'PUT',
+        url,
+        '-H',
+        apikey,
+        '-H',
+        apiusername,
+        '-H',
+        'Content-Type: application/json',
+        '-d',
+        '@foo.json']
+)
+	</pre>
+	There's also an example YAML config file, a manpage, and a shellscript to install the manpage (not everybody remembers how), all neatly tucked into the <a href="code.html/discourse_tools">github</a>.
+      </p>
+      <p>
+	I'll circle back in a day or two and break the code down in more detail, and explain some of my choices.
+      </p>
+  </body>
+</html>

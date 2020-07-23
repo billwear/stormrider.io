@@ -1,0 +1,14 @@
+#+TITLE: stormrider's code
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+OPTIONS: \n:t
+#+BEGIN_CENTER
+[[file:blog.org][blog]] ~~~ [[file:journal.org][journal]] ~~~ [[file:doc.org][doc]] ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* [[https://github.com/billwear/xpub][xpub]]
+[[https://github.com/billwear/xpub][xpub]] is a general-purpose, command-line, publishing tool.  I use it @work to pull doc topics from discourse to edit them in emacs, and them push them back.  It also manages my githubs (encapsulated push and pull functionality), and converts from one doc format to another.  It is "discourse-aware," in that it can not only convert discourse markdown to HTML, but also fix most of the discourse-centric links in the process.  It can work on one file or an entire directory.  Here's a show-and-tell about ~xpub~ that I gave at work:
+
+
+*** [[https://drive.google.com/file/d/1jcJn116FNxH-C7zMQZYqZ6sHdIoPtDdF/view?usp=sharing][xpub Show-and-Tell, 23 July 2020, by stormrider]]
+

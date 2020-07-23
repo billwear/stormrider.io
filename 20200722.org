@@ -1,0 +1,23 @@
+#+TITLE: 1595427553
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Wed, Jul 22, 2020 / 1595427553 / Pungenday, Confusion 57, 3186 YOLD
+
+** fortune -s
+There is a 20% chance of tomorrow. /with an 80% chance of rain?/
+
+** daily journal
+*** *<2020-07-22 Wed 09:20>*
+A little more organized this morning. Having a decent day, not paying to much attention to my org checklist, still getting what's important done. My daily workflow is shifting on its own, that might be a good thing.  Since starting therapy a couple of months ago, I'm starting to feel more comfortable being spontaneous and trusting my instincts.  That's good.  Now I just need to teach my instincts that all available food is not an acceptable meal.
+
+*** *<2020-07-22 Wed 09:24>*
+I'm still focused on my RAD project today.  I think I finally fixed all the broken (malformed) links yesterday.  There were a lot of them.  It was a worthy effort, and I pushed my fixes back into the main doc.  Hopefully I didn't push any cruft in the process, but that will show up soon enough if I did.  Today, I'm going to focus on getting the github maas-docs loaded with conditionals to separate the UI from the CLI commands, and maybe look at getting some CLI commands alongside some of the UI-only presentations.  First, though, I need to cycle back thru my documentation for xpub and improve it a little more, it's kinda weak.
+
+*** *<2020-07-22 Wed 17:15>*
+Good day so far. My wife brought home spicy fried chicken when she went to town for some essentials.  I got the entire xpub program loaded with proper help screens and tested end-to-end.  And we're getting a little rain, which I always like.  Now I just have to decide what I want to do tonight.

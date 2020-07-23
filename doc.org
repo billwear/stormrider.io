@@ -1,0 +1,19 @@
+#+TITLE: stormrider's doc work
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+Here's where I keep a lot of the documentation I write and curate.  All of these sections should have appropriate emails to give me feedback.
+
+* [[file:maas-rad.org][MAAS RAD]]
+A Canonical experiment in Reader Adaptive Documentation.  The reader can choose attributes, like version or preferred interface, and see different doc.  I'm hosting an early prototype on this site to simplify testing.
+
+* [[http://stormrider.io/maas-notes/stormrider-maas-notes.html][stormrider's MAAS notes]]
+Some technical notes I'm making on MAAS.  Sometimes these trickle back into the company doc.
+
+* [[file:maas-code-doc.org][Documenting the MAAS code]]
+Comments lie, but they sometimes help anyway.
+

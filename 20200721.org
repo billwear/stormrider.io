@@ -1,0 +1,20 @@
+#+TITLE: 1595346305
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Tue, Jul 21, 2020 / 1595346305 / Boomtime, Confusion 56, 3186 YOLD
+
+** fortune -s
+Artistic ventures highlighted.  Rob a museum. /sorry. they don't have star trek posters./
+
+** daily journal
+*** *<2020-07-21 Tue 10:46>*
+Good morning. My adjusted schedule is working out well.  Got up about 8:42 and was dressed and at my desk by 9.  All the trivial tasks are relegated to the end of the day, when I'm tired anyway.  You don't have to be wide awake to walk to garbage to the street.  Worked late last night on my RAD idea, just because it has ahold of me, and there are lots of little legacy nits in the existing documentation that need to be cleaned up before they get propagated to multiple doc versions.  Back on that today, after my usual morning meetings.
+
+
+

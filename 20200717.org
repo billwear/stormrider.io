@@ -1,0 +1,26 @@
+#+TITLE: 1594995475
+
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+BEGIN_CENTER
+[[file:blog.org][blog]]  ~~~   [[file:journal.org][journal]]   ~~~   [[file:doc.org][doc]]   ~~~ [[file:code.org][code]] ~~~ [[file:index.org][home]]
+#+END_CENTER
+
+* personal journal of stormrider
+Fri, Jul 17, 2020 / 1594995475
+ / Pungenday, Confusion 52, 3186 YOLD
+
+** fortune -s
+It may or may not be worthwhile, but it still has to be done.
+
+** daily journal
+*** *<2020-07-17 Fri 09:24>*
+crazy morning, but slept really well; i'm beginning to be okay with this sleeping thing, just need to either trim it back in the direction of getting up earlier, or go ahead and stay up later and use that time a little more wisely.  i can work on that tomorrow morning some. meanwhile, i don't need to forget to freeze the meat today, without fail, probably at lunch.
+
+*** *<2020-07-17 Fri 11:18>*
+work morning full of administrivia, just a lot of little things that seem to pile up over the week; good standup today, and now i have the weekend to get busy on my passions.  i would imagine my wife will be tired from a very long week, so she probably won't be in much of a mood to hang out tonight, which means i should plan something to work on so that i won't be an annoyance as she tries to get some quiet and rest.
+
+*** *<2020-07-17 Fri 12:57>*
+average lunch for a friday, a copule of hot pockets; just not much into housework-type things today, really want to get on to coding and writing, but had some trivia to take care of this morning; my wife works tomorrow, so it'll probably be a day spent at the keyboards.
+*** *<2020-07-17 Fri 20:49>*
+okay-bie, then!  got a really cool result for my [[http://stormrider.io/maas-rad/maas-documentation-25.html][RAD project]] today, the product of a great week's work.  very nice; still a lot of work to do, and still a lot of work i /want/ to do, but it's a truly great start.  most of this is automated, btw, only one 90m session to fix some bad (legacy) links in the markdown, everything else was done by my publishing tool ~xpub~, which i need to blog about today.
